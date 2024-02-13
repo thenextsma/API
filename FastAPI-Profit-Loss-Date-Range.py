@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[72]:
-
-
 from datetime import datetime, timedelta
 from fastapi import FastAPI
 from typing import Optional
@@ -11,9 +5,6 @@ import requests  # For making HTTP requests
 from oauthlib.oauth2 import BackendApplicationClient  # For OAuth2
 from requests_oauthlib import OAuth2Session 
 import json
-
-
-# In[77]:
 
 
 def calculate_dates(selection, custom_start=None, custom_end=None):
@@ -43,14 +34,7 @@ def calculate_dates(selection, custom_start=None, custom_end=None):
     return start_date, end_date
 
 
-
-# In[78]:
-
-
 app = FastAPI()
-
-
-# In[79]:
 
 
 def profit_and_loss_modified(selection,start_date,end_date):
@@ -94,7 +78,7 @@ def profit_and_loss_modified(selection,start_date,end_date):
         start_date = datetime.strptime(custom_start, "%Y-%m-%d")
         end_date = d.strptime(custom_end, "%Y-%m-%d")
 def fetch_profit_and_loss(start_date, end_date,timeframe,periods):
-    response_finn = requests.get("https://finanshels.onrender.com/get_latest_access_token?email=9710561829026")
+    response_finn = requests.get("")
     finn_token = response_finn.json()
 
     url = f"https://api.xero.com/api.xro/2.0/Reports/ProfitAndLoss?fromDate={start_date}&toDate={end_date}&timeframe={timeframe}&periods={periods}"
@@ -121,21 +105,6 @@ async def get_insights(Range: str, Period: int, Timeframe: str, custom_start: Op
 
     pnl_data = fetch_profit_and_loss(start_date, end_date, Timeframe, Period)
     return pnl_data
-
-
-# In[ ]:
-
-
-
-
-
-# In[48]:
-
-
-
-
-
-# In[ ]:
 
 
 
