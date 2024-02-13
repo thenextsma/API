@@ -2,6 +2,8 @@ API
 
 Details on each python file:
 
+chat-togetherAI.py - Generative AI using together.ai API
+
 university_search_api.py - FastAPI endpoint to retrieve universities by country.
 
 university_search_streamlit.py - FastAPI endpoint to retrieve universities by country using Streamlit interface
@@ -33,3 +35,4 @@ Exec-Summary-Report-FastAPI - A FastAPI-based application for generating executi
 FastAPI-Profit-Loss-Date-Range: Repository for a FastAPI service that takes data from Xero API then calculates profit and loss data for a specified date range.
 
 FastAPI-PNL-Json-data - Repository for a FastAPI service that analyzes profit and loss reports retrieved from the Json file
+
