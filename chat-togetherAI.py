@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-TOGETHER_API_KEY = "c"
+TOGETHER_API_KEY = ""
 TOGETHER_API_BASE = "https://api.together.xyz/v1/chat/completions"
 
 def post_chat_completion(model: str, user_input: str) -> str:
